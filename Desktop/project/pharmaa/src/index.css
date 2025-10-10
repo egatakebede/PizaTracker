@@ -1,0 +1,825 @@
+@import "tailwindcss";
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode base */
+@layer base {
+  .dark {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* --- GLOBAL FIXES FOR FULL APP --- */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* prevent extra scroll */
+}
+
+/* App container fills full viewport */
+#__app_root__ {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Main content scrolls only if needed for overflow */
+main {
+  flex: 1; /* fill remaining space */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- PROFESSIONAL AUTH PAGES --- */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f3f2f0;
+  padding: 20px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.auth-container h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: #000000E6;
+  text-align: center;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #00000099;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.auth-form {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000E6;
+  margin-bottom: 6px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #0a66c2;
+  box-shadow: 0 0 0 1px #0a66c2;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #0a66c2;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.forgot-password {
+  display: block;
+  text-align: left;
+  color: #0a66c2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  background-color: #eef5ff;
+}
+
+.auth-container button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 16px;
+}
+
+.auth-container button[type="submit"]:hover {
+  background: #004182;
+}
+
+.divider {
+  text-align: center;
+  position: relative;
+  margin: 16px 0;
+  color: #00000099;
+  font-size: 14px;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 16px;
+  position: relative;
+}
+
+.social-login {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #000000E6;
+  border: 1px solid #00000099;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-login:hover {
+  background: #f3f2f0;
+}
+
+.social-login.apple {
+  background: #000000;
+  color: white;
+  border-color: #000000;
+}
+
+.social-login.apple:hover {
+  background: #333333;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-switch p {
+  color: #00000099;
+  font-size: 16px;
+  margin: 0;
+}
+
+.auth-switch a {
+  color: #0a66c2;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive for auth pages */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+    background: white;
+  }
+  
+  .auth-form {
+    box-shadow: none;
+    border: none;
+    padding: 16px;
+  }
+  
+  .auth-switch {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* --- PARTICLE ANIMATIONS --- */
+@keyframes bounce-slow { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+.animate-bounce-slow{animation:bounce-slow 6s infinite;}
+
+@keyframes bounce-slower {0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);} }
+.animate-bounce-slower{animation:bounce-slower 8s infinite;}
+
+.medical-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.7; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.7; }
+}
+.animate-particle-float { animation-name: particle-float; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+
+/* Topbar/Sidebar slide-in */
+@keyframes slide-in-down { from {transform:translateY(-50px);opacity:0;} to {transform:translateY(0);opacity:1;} }
+@keyframes slide-in-left { from {transform:translateX(-50px);opacity:0;} to {transform:translateX(0);opacity:1;} }
+.animate-slide-in-down{animation:slide-in-down 0.5s ease forwards;}
+.animate-slide-in-left{animation:slide-in-left 0.5s ease forwards;}
+
+/* Medical cross float */
+.medical-cross {
+  width: 60px;
+  height: 60px;
+  background: rgba(239,68,68,0.3);
+  clip-path: polygon(25% 0%,75% 0%,75% 25%,100% 25%,100% 75%,75% 75%,75% 100%,25% 100%,25% 75%,0% 75%,0% 25%,25% 25%);
+}
+@keyframes float-medical{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.animate-float-medical{animation:float-medical 3s ease-in-out infinite;}
+
+/* DNA helix animation */
+.dna-helix { display:flex; flex-direction:column; gap:4px; animation:dna-spin 6s linear infinite; }
+.dna-strand { width:4px; height:40px; background: linear-gradient(to bottom,#3b82f6,#ec4899); border-radius:2px;}
+@keyframes dna-spin{0%{transform:rotate(0deg) translateX(0);}50%{transform:rotate(180deg) translateX(10px);}100%{transform:rotate(360deg) translateX(0);}}
+
+/* Scroll animation for page content */
+.scroll-animate > * { transform: translateY(20px); opacity: 0; animation: scroll-in 0.6s forwards;}
+@keyframes scroll-in{to{transform:translateY(0);opacity:1;}}
+
+/* Background gradient */
+.medical-bg{position:relative; background:linear-gradient(120deg,#f0f9ff,#e0f2fe); overflow:hidden;}
+
+/* --- FIXED FLASH ANIMATIONS FOR EXPIRING MEDICINES --- */
+@keyframes flash-police {
+  0% { border-color: #ef4444; box-shadow: 0 0 0 2px #ef4444; }
+  25% { border-color: #3b82f6; box-shadow: 0 0 0 2px #3b82f6; }
+  50% { border-color: #ef4444; box-shadow: 0 0 0 2px #ef4444; }
+  75% { border-color: #3b82f6; box-shadow: 0 0 0 2px #3b82f6; }
+  100% { border-color: #ef4444; box-shadow: 0 0 0 2px #ef4444; }
+}
+
+.animate-flash-police {
+  animation: flash-police 1s infinite;
+  border: 2px solid #ef4444;
+}
+
+@keyframes blueRedFlash {
+  0% { 
+    box-shadow: 0 0 15px 3px #3b82f6, 0 0 0 2px #3b82f6; 
+    border-color: #3b82f6;
+  }
+  50% { 
+    box-shadow: 0 0 15px 3px #ef4444, 0 0 0 2px #ef4444; 
+    border-color: #ef4444;
+  }
+  100% { 
+    box-shadow: 0 0 15px 3px #3b82f6, 0 0 0 2px #3b82f6; 
+    border-color: #3b82f6;
+  }
+}
+
+.flash-expiring {
+  animation: blueRedFlash 1.5s infinite;
+  border: 2px solid #ef4444;
+  border-radius: 12px;
+}
+
+/* Specific flash classes for different statuses */
+.flash-expired {
+  animation: flash-police 0.8s infinite;
+  border: 2px solid #ef4444;
+  background: linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+}
+
+.flash-warning {
+  animation: blueRedFlash 2s infinite;
+  border: 2px solid #f59e0b;
+  background: linear-gradient(45deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+}
+
+.flash-critical {
+  animation: flash-police 0.5s infinite;
+  border: 2px solid #dc2626;
+  background: linear-gradient(45deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
+}
+
+/* Pulse animation for low stock */
+@keyframes pulse-warning { 
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  50% { 
+    opacity: 0.8;
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+}
+
+.animate-pulse-warning { 
+  animation: pulse-warning 2s infinite;
+  border: 2px solid #f59e0b;
+}
+
+/* Emergency flash for out of stock */
+@keyframes emergency-flash {
+  0%, 100% { 
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+  }
+  50% { 
+    background-color: rgba(239, 68, 68, 0.3);
+    border-color: #dc2626;
+  }
+}
+
+.animate-emergency-flash {
+  animation: emergency-flash 1s infinite;
+  border: 2px solid #ef4444;
+}@import "tailwindcss";
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode base */
+@layer base {
+  .dark {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* --- GLOBAL FIXES FOR FULL APP --- */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* prevent extra scroll */
+}
+
+/* App container fills full viewport */
+#__app_root__ {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Main content scrolls only if needed for overflow */
+main {
+  flex: 1; /* fill remaining space */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- PROFESSIONAL AUTH PAGES --- */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f3f2f0;
+  padding: 20px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.auth-container h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: #000000E6;
+  text-align: center;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #00000099;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.auth-form {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000E6;
+  margin-bottom: 6px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #0a66c2;
+  box-shadow: 0 0 0 1px #0a66c2;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #0a66c2;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.forgot-password {
+  display: block;
+  text-align: left;
+  color: #0a66c2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  background-color: #eef5ff;
+}
+
+.auth-container button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 16px;
+}
+
+.auth-container button[type="submit"]:hover {
+  background: #004182;
+}
+
+.divider {
+  text-align: center;
+  position: relative;
+  margin: 16px 0;
+  color: #00000099;
+  font-size: 14px;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 16px;
+  position: relative;
+}
+
+.social-login {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #000000E6;
+  border: 1px solid #00000099;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-login:hover {
+  background: #f3f2f0;
+}
+
+.social-login.apple {
+  background: #000000;
+  color: white;
+  border-color: #000000;
+}
+
+.social-login.apple:hover {
+  background: #333333;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-switch p {
+  color: #00000099;
+  font-size: 16px;
+  margin: 0;
+}
+
+.auth-switch a {
+  color: #0a66c2;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive for auth pages */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+    background: white;
+  }
+  
+  .auth-form {
+    box-shadow: none;
+    border: none;
+    padding: 16px;
+  }
+  
+  .auth-switch {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* --- PARTICLE ANIMATIONS --- */
+@keyframes bounce-slow { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+.animate-bounce-slow{animation:bounce-slow 6s infinite;}
+
+@keyframes bounce-slower {0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);} }
+.animate-bounce-slower{animation:bounce-slower 8s infinite;}
+
+.medical-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.7; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.7; }
+}
+.animate-particle-float { animation-name: particle-float; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+
+/* Topbar/Sidebar slide-in */
+@keyframes slide-in-down { from {transform:translateY(-50px);opacity:0;} to {transform:translateY(0);opacity:1;} }
+@keyframes slide-in-left { from {transform:translateX(-50px);opacity:0;} to {transform:translateX(0);opacity:1;} }
+.animate-slide-in-down{animation:slide-in-down 0.5s ease forwards;}
+.animate-slide-in-left{animation:slide-in-left 0.5s ease forwards;}
+
+/* Medical cross float */
+.medical-cross {
+  width: 60px;
+  height: 60px;
+  background: rgba(239,68,68,0.3);
+  clip-path: polygon(25% 0%,75% 0%,75% 25%,100% 25%,100% 75%,75% 75%,75% 100%,25% 100%,25% 75%,0% 75%,0% 25%,25% 25%);
+}
+@keyframes float-medical{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.animate-float-medical{animation:float-medical 3s ease-in-out infinite;}
+
+/* DNA helix animation */
+.dna-helix { display:flex; flex-direction:column; gap:4px; animation:dna-spin 6s linear infinite; }
+.dna-strand { width:4px; height:40px; background: linear-gradient(to bottom,#3b82f6,#ec4899); border-radius:2px;}
+@keyframes dna-spin{0%{transform:rotate(0deg) translateX(0);}50%{transform:rotate(180deg) translateX(10px);}100%{transform:rotate(360deg) translateX(0);}}
+
+/* Scroll animation for page content */
+.scroll-animate > * { transform: translateY(20px); opacity: 0; animation: scroll-in 0.6s forwards;}
+@keyframes scroll-in{to{transform:translateY(0);opacity:1;}}
+
+/* Background gradient */
+.medical-bg{position:relative; background:linear-gradient(120deg,#f0f9ff,#e0f2fe); overflow:hidden;}
+
+/* --- MEDICAL EMERGENCY FLASH ANIMATIONS --- */
+@keyframes medical-alert-flash {
+  0%, 100% { 
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% { 
+    background-color: rgba(239, 68, 68, 0.3);
+    border-color: #dc2626;
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.3);
+  }
+}
+
+@keyframes medical-warning-flash {
+  0%, 100% { 
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+  50% { 
+    background-color: rgba(245, 158, 11, 0.25);
+    border-color: #d97706;
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.2);
+  }
+}
+
+@keyframes medical-critical-flash {
+  0%, 100% { 
+    background-color: rgba(220, 38, 38, 0.15);
+    border-color: #dc2626;
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.8);
+    transform: scale(1);
+  }
+  50% { 
+    background-color: rgba(220, 38, 38, 0.3);
+    border-color: #b91c1c;
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes medical-expired-flash {
+  0%, 100% { 
+    background: linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+    border-color: #ef4444;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+  }
+  25% {
+    background: linear-gradient(45deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+    border-color: #dc2626;
+  }
+  50% { 
+    background: linear-gradient(45deg, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.15));
+    border-color: #b91c1c;
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.2);
+  }
+  75% {
+    background: linear-gradient(45deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+    border-color: #dc2626;
+  }
+}
+
+@keyframes medical-notice-pulse {
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% { 
+    opacity: 0.8;
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+  }
+}
+
+/* Medical flash classes */
+.medical-alert-flash {
+  animation: medical-alert-flash 1.5s infinite;
+  border: 2px solid #ef4444;
+  border-radius: 12px;
+}
+
+.medical-warning-flash {
+  animation: medical-warning-flash 2s infinite;
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+}
+
+.medical-critical-flash {
+  animation: medical-critical-flash 1s infinite;
+  border: 2px solid #dc2626;
+  border-radius: 12px;
+}
+
+.medical-expired-flash {
+  animation: medical-expired-flash 1.2s infinite;
+  border: 2px solid #ef4444;
+  border-radius: 12px;
+}
+
+.medical-notice-pulse {
+  animation: medical-notice-pulse 3s infinite;
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+}
+
+/* Emergency out of stock flash */
+@keyframes out-of-stock-emergency {
+  0%, 100% { 
+    background-color: rgba(220, 38, 38, 0.2);
+    border-color: #dc2626;
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.8);
+  }
+  50% { 
+    background-color: rgba(220, 38, 38, 0.4);
+    border-color: #991b1b;
+    box-shadow: 0 0 0 12px rgba(220, 38, 38, 0.2);
+  }
+}
+
+.out-of-stock-emergency {
+  animation: out-of-stock-emergency 0.8s infinite;
+  border: 2px solid #dc2626;
+  border-radius: 12px;
+}
+.auth-form input {
+  color: #0f0f10;
+ 
+  border: 1px solid #555;
+}
