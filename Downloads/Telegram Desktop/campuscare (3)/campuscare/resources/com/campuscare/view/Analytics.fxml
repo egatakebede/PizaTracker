@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.campuscare.controller.AnalyticsController"
+            styleClass="dashboard-container"
+            prefWidth="1200" prefHeight="700">
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="📊 Analytics Dashboard" styleClass="welcome-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                
+                <Label text="Overview Statistics" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                
+                <GridPane hgap="20" vgap="20">
+                    <VBox styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label fx:id="totalRequestsLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
+                        <Label text="Total Requests" style="-fx-text-fill: gray;"/>
+                    </VBox>
+                    
+                    <VBox styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label fx:id="pendingLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: orange;"/>
+                        <Label text="Pending" style="-fx-text-fill: gray;"/>
+                    </VBox>
+                    
+                    <VBox styleClass="stat-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <Label fx:id="inProgressLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: blue;"/>
+                        <Label text="In Progress" style="-fx-text-fill: gray;"/>
+                    </VBox>
+                    
+                    <VBox styleClass="stat-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                        <Label fx:id="completedLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: green;"/>
+                        <Label text="Completed" style="-fx-text-fill: gray;"/>
+                    </VBox>
+                </GridPane>
+                
+                <Separator/>
+                
+                <Label text="Performance Metrics" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                
+                <GridPane hgap="20" vgap="20">
+                    <VBox styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label fx:id="avgResolutionLabel" text="0h" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                        <Label text="Avg Resolution Time" style="-fx-text-fill: gray;"/>
+                    </VBox>
+                    
+                    <VBox styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label fx:id="completionRateLabel" text="0%" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                        <Label text="Completion Rate" style="-fx-text-fill: gray;"/>
+                    </VBox>
+                </GridPane>
+                
+                <Separator/>
+                
+                <Label text="Requests by Category" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <TableView fx:id="categoryTable" prefHeight="200">
+                    <columns>
+                        <TableColumn fx:id="categoryCol" text="Category" prefWidth="200"/>
+                        <TableColumn fx:id="countCol" text="Count" prefWidth="100"/>
+                        <TableColumn fx:id="percentCol" text="Percentage" prefWidth="100"/>
+                    </columns>
+                </TableView>
+                
+                <Separator/>
+                
+                <Label text="Requests by Priority" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <TableView fx:id="priorityTable" prefHeight="150">
+                    <columns>
+                        <TableColumn fx:id="priorityCol" text="Priority" prefWidth="200"/>
+                        <TableColumn fx:id="priorityCountCol" text="Count" prefWidth="100"/>
+                        <TableColumn fx:id="priorityPercentCol" text="Percentage" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

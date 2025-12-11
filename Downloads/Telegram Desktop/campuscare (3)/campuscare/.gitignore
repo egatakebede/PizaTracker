@@ -1,0 +1,27 @@
+# Compiled class files
+*.class
+bin/
+target/
+out/
+
+# Build files
+.gradle/
+build/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Data files
+*.dat
+data/
+
+# Web/React files (not needed for JavaFX)
+node_modules/
+dist/
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db

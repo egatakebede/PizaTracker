@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.campuscare.controller.MainController" styleClass="root">
+    
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label text="CampusCare - Service Request System" styleClass="title" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="themeButton" text="🌙 Theme" onAction="#onToggleTheme" styleClass="secondary-btn"/>
+            </HBox>
+            <Label fx:id="statsLabel" text="Total: 0 | Pending: 0 | In Progress: 0 | Completed: 0" 
+                   style="-fx-text-fill: white; -fx-padding: 5 0 0 0;"/>
+            <Separator/>
+        </VBox>
+    </top>
+    
+    <left>
+        <VBox spacing="10" styleClass="form-panel">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            
+            <Label text="New Service Request" styleClass="section-title"/>
+            
+            <Label text="Requester Name:"/>
+            <TextField fx:id="requesterField" promptText="Enter your name"/>
+            
+            <Label text="Request Type:"/>
+            <ChoiceBox fx:id="typeChoice"/>
+            
+            <Label text="Priority:"/>
+            <ChoiceBox fx:id="priorityChoice"/>
+            
+            <Label text="Status:"/>
+            <ChoiceBox fx:id="statusChoice"/>
+            
+            <HBox spacing="10">
+                <Button fx:id="addButton" text="Add Request" onAction="#onAdd" styleClass="primary-btn"/>
+                <Button fx:id="attachButton" text="Attach File" onAction="#onAttach" styleClass="secondary-btn"/>
+            </HBox>
+            
+            <Separator/>
+            
+            <Label text="Data Management" styleClass="section-title"/>
+            <HBox spacing="10">
+                <Button fx:id="saveButton" text="Save" onAction="#onSave" styleClass="secondary-btn"/>
+                <Button fx:id="loadButton" text="Load" onAction="#onLoad" styleClass="secondary-btn"/>
+            </HBox>
+            
+            <Label text="Export &amp; Actions" styleClass="section-title"/>
+            <VBox spacing="5">
+                <Button fx:id="exportPdfButton" text="📄 Export PDF" onAction="#onExportPDF" styleClass="secondary-btn" maxWidth="Infinity"/>
+                <Button fx:id="exportExcelButton" text="📊 Export Excel" onAction="#onExportExcel" styleClass="secondary-btn" maxWidth="Infinity"/>
+                <Button fx:id="reportButton" text="📊 Generate Report" onAction="#onGenerateReport" styleClass="secondary-btn" maxWidth="Infinity"/>
+                <Button fx:id="printButton" text="🖨️ Print" onAction="#onPrint" styleClass="secondary-btn" maxWidth="Infinity"/>
+                <Button fx:id="deleteButton" text="🗑️ Delete" onAction="#onDelete" styleClass="secondary-btn" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Service Requests" styleClass="section-title" HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="searchField" promptText="🔍 Search requests..." prefWidth="250"/>
+            </HBox>
+            
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="Request ID" prefWidth="100"/>
+                    <TableColumn fx:id="colRequester" text="Requester" prefWidth="150"/>
+                    <TableColumn fx:id="colType" text="Type" prefWidth="200"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

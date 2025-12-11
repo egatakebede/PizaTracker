@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.campuscare.controller.ProfileController"
+            styleClass="dashboard-container"
+            prefWidth="1200" prefHeight="700">
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="👤 My Profile" styleClass="welcome-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20" alignment="TOP_CENTER">
+                <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+                
+                <VBox spacing="20" maxWidth="500" styleClass="stat-card">
+                    <Label text="Profile Information" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    
+                    <GridPane hgap="15" vgap="15">
+                        <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="idLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="usernameLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        
+                        <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="roleLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        
+                        <Label text="Department:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="departmentLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    </GridPane>
+                    
+                    <Separator/>
+                    
+                    <Label text="Change Password" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    
+                    <VBox spacing="10">
+                        <Label text="Current Password:"/>
+                        <PasswordField fx:id="currentPasswordField" promptText="Enter current password"/>
+                        
+                        <Label text="New Password:"/>
+                        <PasswordField fx:id="newPasswordField" promptText="Enter new password"/>
+                        
+                        <Label text="Confirm Password:"/>
+                        <PasswordField fx:id="confirmPasswordField" promptText="Confirm new password"/>
+                        
+                        <Label fx:id="messageLabel" styleClass="error-label" wrapText="true"/>
+                    </VBox>
+                    
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button text="Update Profile" onAction="#handleUpdateProfile" styleClass="primary-button"/>
+                        <Button text="Change Password" onAction="#handleChangePassword" styleClass="secondary-button"/>
+                        <Button fx:id="fullscreenBtn" text="⛶ Fullscreen" onAction="#handleFullscreen" styleClass="secondary-button"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

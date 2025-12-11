@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.campuscare.controller.JavaFXExportController">
+    <children>
+        <Label text="Export (Placeholder)" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10"/>
+    </children>
+</AnchorPane>

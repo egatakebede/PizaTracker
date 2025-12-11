@@ -1,0 +1,105 @@
+========================================
+HOW TO RUN CAMPUSCARE WITH LOGIN
+========================================
+
+IMPORTANT: Run Main.java (NOT App.java)
+- App.java skips login
+- Main.java shows login screen
+
+========================================
+DEFAULT LOGIN CREDENTIALS
+========================================
+
+ADMIN (System Administrator):
+  Username: admin
+  Password: admin123
+  - Manages users, departments, request categories
+  - Monitors overall system
+  - Full access to all requests and analytics
+
+STAFF (Administrative Staff):
+  Username: staff1
+  Password: pass123
+  - Submits requests, tracks status
+  - May manage administrative service requests
+  - Can only see OWN requests
+
+DEPARTMENT STAFF (IT Support Service Provider):
+  Username: itstaff
+  Password: pass123
+  - Views requests assigned to IT Support department
+  - Updates status, communicates with requesters
+  - Can assign, update, export department requests
+
+DEPARTMENT STAFF (Facilities Service Provider):
+  Username: facilitystaff
+  Password: pass123
+  - Views requests assigned to Facilities department
+  - Updates status, communicates with requesters
+  - Can assign, update, export department requests
+
+STUDENT:
+  Username: 1892/16
+  Password: pass123
+  Department: Computer Science
+  - Submits requests to departments
+  - Tracks status of own requests
+  - Receives updates via comments
+
+STUDENT:
+  Username: 1893/16
+  Password: pass123
+  Department: Engineering
+  - Submits requests to departments
+  - Tracks status of own requests
+
+LECTURER:
+  Username: lecturer1
+  Password: pass123
+  Department: Engineering
+  - Submits requests to departments
+  - Tracks status of own requests
+  - May review academic-related requests
+
+========================================
+ROLE-BASED FEATURES
+========================================
+
+STUDENT:
+✓ Submit requests to departments
+✓ Track status of own requests
+✓ Receive updates via comments
+✓ View own request details
+
+LECTURER:
+✓ Submit requests to departments
+✓ Track status of own requests
+✓ May review academic-related requests
+✓ Add comments to own requests
+
+STAFF (Administrative):
+✓ Submit requests to departments
+✓ Track status of own requests
+✓ May manage administrative service requests
+✓ View own request details
+
+DEPARTMENT STAFF (Service Provider):
+✓ View requests assigned to their department
+✓ Update request status
+✓ Assign requests to themselves
+✓ Communicate with requesters via comments
+✓ Export department requests
+
+ADMIN (System Administrator):
+✓ Manage users, departments, categories
+✓ Monitor overall system
+✓ View all requests and analytics
+✓ Full system access
+
+========================================
+VM OPTIONS (IntelliJ)
+========================================
+
+--module-path "C:/Users/User/Downloads/openjfx-25.0.1_windows-x64_bin-sdk/javafx-sdk-25.0.1/lib" --add-modules javafx.controls,javafx.fxml
+
+========================================

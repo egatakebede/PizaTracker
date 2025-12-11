@@ -1,0 +1,106 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f5f5;
+}
+
+.login-container {
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);
+    -fx-padding: 50;
+}
+
+.title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-fill: white;
+}
+
+.subtitle {
+    -fx-font-size: 18px;
+    -fx-fill: #ecf0f1;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.form-field {
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 12 30;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.hint-text {
+    -fx-fill: #bdc3c7;
+    -fx-font-size: 12px;
+}
+
+.dashboard-container {
+    -fx-background-color: #ecf0f1;
+}
+
+.header {
+    -fx-background-color: #2c3e50;
+}
+
+.welcome-label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.form-container {
+    -fx-background-color: white;
+    -fx-padding: 20;
+}
+
+.form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-background-color: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}

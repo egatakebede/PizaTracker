@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.campuscare.controller.TopBarController" spacing="10" prefHeight="60">
+    <children>
+        <Label text="Top Bar (Placeholder)" />
+    </children>
+</HBox>

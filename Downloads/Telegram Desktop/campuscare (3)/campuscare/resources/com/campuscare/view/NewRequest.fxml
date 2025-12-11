@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.campuscare.controller.NewRequestController"
+      spacing="15" styleClass="form-container">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="New Service Request" styleClass="form-title"/>
+    
+    <Label text="Title *" styleClass="form-label"/>
+    <TextField fx:id="titleField" promptText="Enter request title"/>
+    
+    <Label text="Department *" styleClass="form-label"/>
+    <ComboBox fx:id="departmentCombo" promptText="Select department" maxWidth="Infinity"/>
+    
+    <Label text="Service Type *" styleClass="form-label"/>
+    <ComboBox fx:id="categoryCombo" promptText="Select service type" maxWidth="Infinity"/>
+    
+    <Label text="Priority" styleClass="form-label"/>
+    <ComboBox fx:id="priorityCombo" promptText="Select priority" maxWidth="Infinity"/>
+    
+    <Label text="Description *" styleClass="form-label"/>
+    <TextArea fx:id="descriptionArea" promptText="Describe your request" prefRowCount="5"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Attach File" onAction="#handleAttachment" styleClass="secondary-button"/>
+        <Label fx:id="attachmentLabel" text="" styleClass="hint-text"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button"/>
+        <Button text="Submit" onAction="#handleSubmit" styleClass="primary-button"/>
+    </HBox>
+</VBox>

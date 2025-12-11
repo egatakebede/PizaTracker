@@ -1,0 +1,73 @@
+========================================
+CAMPATH - MOCK USER DATA
+========================================
+
+STUDENTS:
+---------
+ID: 1892/16
+Password: pass123
+Name: Student 1
+Email: student1892@campus.edu
+Department: Computer Science
+Role: STUDENT
+
+ID: 1893/16
+Password: pass123
+Name: Student 2
+Email: student1893@campus.edu
+Department: Engineering
+Role: STUDENT
+
+LECTURERS:
+----------
+ID: lecturer1
+Password: pass123
+Name: Lecturer 1
+Email: lecturer1@campus.edu
+Department: Engineering
+Role: LECTURER
+
+STAFF:
+------
+ID: staff1
+Password: pass123
+Name: Staff 1
+Email: staff1@campus.edu
+Department: Finance
+Role: STAFF
+
+DEPARTMENT STAFF:
+-----------------
+ID: itstaff
+Password: pass123
+Name: IT Staff
+Email: itstaff@campus.edu
+Department: IT Support
+Role: DEPARTMENT_STAFF
+
+ID: facilitystaff
+Password: pass123
+Name: Facility Staff
+Email: facilitystaff@campus.edu
+Department: Facilities Maintenance
+Role: DEPARTMENT_STAFF
+
+ADMIN:
+------
+ID: admin
+Password: admin123
+Name: Administrator
+Email: admin@campus.edu
+Department: Administration
+Role: ADMIN
+
+========================================
+QUICK LOGIN REFERENCE:
+========================================
+Student:          1892/16 / pass123
+Lecturer:         lecturer1 / pass123
+Staff:            staff1 / pass123
+IT Support:       itstaff / pass123
+Facilities:       facilitystaff / pass123
+Admin:            admin / admin123
+========================================
