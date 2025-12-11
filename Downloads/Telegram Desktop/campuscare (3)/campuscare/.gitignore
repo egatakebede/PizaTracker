@@ -1,27 +1,30 @@
-# Compiled class files
+### Java / Build ###
+# Compiled class files and archives
 *.class
+*.jar
+*.war
+*.ear
+
+# Build tool folders
 bin/
-target/
 out/
-
-# Build files
-.gradle/
 build/
+target/
+.gradle/
 
-# IDE files
+# Log files and crash dumps
+*.log
+hs_err_pid*
+
+### IDE ###
+# IntelliJ
 .idea/
 *.iml
+*.ipr
+*.iws
+
+# VSCode
 .vscode/
 
-# Data files
-*.dat
+### Data ###
 data/
-
-# Web/React files (not needed for JavaFX)
-node_modules/
-dist/
-.env.local
-
-# OS files
-.DS_Store
-Thumbs.db
